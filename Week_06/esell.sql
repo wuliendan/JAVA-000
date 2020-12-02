@@ -166,18 +166,21 @@ CREATE TABLE `seller_info`  (
 
 # 用户信息表，用户登陆名，用户密码，用户电话，用户性别，用户出生日期
 -- ----------------------------
--- Table structure for user
+-- Table structure for user_info
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user`  (
-  `Id` tinyint(50) NOT NULL AUTO_INCREMENT,
-  `UserName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户登录名',
-  `Password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户登陆密码',
+DROP TABLE IF EXISTS `user_info`;
+CREATE TABLE `user_info`  (
+  `Id` bigint(50) NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户登录名',
+  `Password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户登陆密码',
   `Telephone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户电话',
   `Gender` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户性别',
+  `IdNo` varchar(19) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户身份证号',
   `Birthday` datetime(0) NULL DEFAULT NULL COMMENT '用户出生日期',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1000001 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
