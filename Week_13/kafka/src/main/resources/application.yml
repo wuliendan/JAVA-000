@@ -1,0 +1,11 @@
+spring:
+  kafka:
+    # 软件老王，kafka集群服务器地址
+    bootstrap-servers: 127.0.0.1:9001,127.0.0.1:9002,127.0.0.1:9003
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: test32
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
